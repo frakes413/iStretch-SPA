@@ -6,12 +6,14 @@ const app = express();
 
 // Router Requirement
 const stretches = require('./routes/api/stretches');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 //BodyParser Middleware
 app.use(bodyParser.json());
 
 // Statically server everything that lives in the build folder
-app.use('./build', express.static(path.join(__dirname, './build')));
+app.use(express.static(__dirname));
+// app.use('./build', express.static(path.resolve(__dirname, './build/bundle.js')));
 
 // Serving index.html
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, './client/index.html')));

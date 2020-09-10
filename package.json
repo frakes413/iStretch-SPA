@@ -2,10 +2,11 @@
   "name": "sam_frakes_solo-project",
   "version": "1.0.0",
   "description": "iStretch",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,9 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "nodemon": "^2.0.4"
+    "css-loader": "^4.3.0",
+    "nodemon": "^2.0.4",
+    "style-loader": "^1.2.1",
+    "webpack-cli": "^3.3.12"
   }
 }

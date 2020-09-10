@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import styles from './style.css';
+// import { render } from 'react-dom';
+// import styles from './style.css';
 
 class App extends Component {
   constructor() {
@@ -10,10 +10,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>HELLO WORLD</h1>
+        <h1>iStretch</h1>
+        <button>Get Random Stretch</button>
       </div>
     );
   };
 }
 
-render(<App />, document.querySelector('#root'));
+export default App;

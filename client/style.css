@@ -1,3 +1,30 @@
 body {
   background-color: lightpink;
+  color: slategray;
+}
+
+#content {
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+}
+
+#randbutton {
+  background-color: lightslategray;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 10px;
+}
+
+#image {
+  height: 500px;
+  width: 500px;
+  border: 3px solid lightslategray;
+}
+
+#photo {
+  height: 500px;
+  width: 500px;
 }

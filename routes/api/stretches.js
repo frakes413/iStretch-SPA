@@ -8,7 +8,7 @@ const Stretch = require('../../models/Stretch');
 // @desc    Get All Stretches
 // @access  Public
 router.get('/', (req, res, next) => {
-    Stretch.find()
+    Stretch.findOne()
       .then(stretches => res.json(stretches));
 });
 

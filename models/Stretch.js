@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const StretchSchema = new Schema({
   name: {type: String, required: true},
   area: {type: String, required: false},
-  description: {type: String, required: false},
+  description: {type: Array, required: false},
   image: {type: String, required: false}
 });
 

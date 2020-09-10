@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 
 // Router Requirement
@@ -8,6 +9,12 @@ const stretches = require('./routes/api/stretches');
 
 //BodyParser Middleware
 app.use(bodyParser.json());
+
+// Statically server everything that lives in the build folder
+app.use('./build', express.static(path.join(__dirname, './build')));
+
+// Serving index.html
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, './client/index.html')));
 
 // DB Configuration & Connection
 const db = require('./config/keys').mongoURI;

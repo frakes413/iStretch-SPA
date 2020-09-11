@@ -20,9 +20,9 @@ class App extends Component {
       .then(response => response.json())
       .then(stretch => this.setState({ 
         name: stretch.name,
-        area: stretch.area,
+        area: 'Focus Areas: ' + stretch.area,
         description: stretch.description,
-        image: stretch.image,
+        image: <div id="image"><img src={stretch.image} id="photo"/></div>,
       }))
       .catch(err => console.log(err));
   };
@@ -30,6 +30,8 @@ class App extends Component {
   render() {
 
     console.log(this.state);
+
+    // const img = <img src={this.state.image} id="photo"/>;
 
     const list = [];
 
@@ -42,15 +44,17 @@ class App extends Component {
     return (
       <div id="content">
         <h1>iStretch</h1>
-        <button id="randbutton" onClick={this.clickHanndler}>Random Stretch</button>
-        <h2>{this.state.name}</h2>
-        <div id="image">
-          <img src={this.state.image} id="photo"/>
+        <div class="button">
+          <button id="randbutton" onClick={this.clickHanndler}>Random Stretch</button>
         </div>
-        <h3>Focus Areas: {this.state.area}</h3>
-        <ul>
-          {list}
-        </ul>
+        <h2>{this.state.name}</h2>
+        {this.state.image}
+        <h3>{this.state.area}</h3>
+        <div class="directions">
+          <ul>
+            {list}
+          </ul>
+        </div>
       </div>
     );
   };

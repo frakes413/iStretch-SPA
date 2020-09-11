@@ -1,15 +1,31 @@
 body {
-  background-color: lightpink;
-  color: slategray;
+  background-color: slategray;
+  color: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 33px;
+}
+
+h2, h3 {
+  text-align: center;
 }
 
 #content {
   display: flexbox;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
+.button {
+  text-align: center;
 }
 
 #randbutton {
+  font-size: large;
+  margin-left: auto;
+  margin-right: auto;
   background-color: lightslategray;
   color: whitesmoke;
   border: 1px solid whitesmoke;
@@ -18,13 +34,33 @@ body {
   margin: 10px;
 }
 
+#randbutton:hover {
+  background-color: whitesmoke;
+  color: lightslategray;
+  border: 1px solid lightslategray;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 10px;
+}
+
+#randbutton:focus {
+  outline: 0;
+}
+
 #image {
-  height: 500px;
-  width: 500px;
-  border: 3px solid lightslategray;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 400px;
+  border: 3px solid whitesmoke;
 }
 
 #photo {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
+}
+
+ul {
+  text-align: center;
+  list-style-position: inside;
 }

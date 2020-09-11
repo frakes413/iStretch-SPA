@@ -7,10 +7,21 @@ const Stretch = require('../../models/Stretch');
 // @route   GET api/stretches
 // @desc    Get All Stretches
 // @access  Public
+// router.get('/', (req, res, next) => {
+//     Stretch.findOne()
+//       .then(stretches => res.json(stretches));
+// });
+
 router.get('/', (req, res, next) => {
-    Stretch.findOne()
-      .then(stretches => res.json(stretches));
-});
+  Stretch.count()
+    .then(count => {
+      let rand = Math.floor(Math.random() * count);
+      Stretch.findOne().skip(rand)
+        .then(stretch => res.json(stretch))
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
+})
 
 // @route   POST api/stretches
 // @desc    Create Stretch
